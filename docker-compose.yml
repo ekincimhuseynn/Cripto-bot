@@ -1,0 +1,10 @@
+services:
+  kriptokaptan:
+    build: .
+    container_name: kriptokaptan
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data   # SQLite veritabanı kalıcı olsun
